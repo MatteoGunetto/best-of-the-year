@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best of the Year</title>
+</head>
+
+<body>
+<h1>Songs</h1>
+<ul th:each="song: ${songs}">
+    <li>[[${song.getId()}]] --> title: [[${song.getTitle()}]]</li>
+</ul>
+</body>
+
+</html>
