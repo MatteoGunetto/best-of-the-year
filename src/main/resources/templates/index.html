@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+
+<head th:fragment="html_head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}">
+
     <title>Best of the Year</title>
 </head>
+
 <body>
-<h1 th:text="'Best of the year by ' + ${name}"/>
-<a href="/movies">Vai a Movies</a>
-<a href="/songs">Vai a songs</a>
+<header th:fragment="site_header">
+    <div class="container">
+        <nav
+                class="navbar border-bottom border-dark px-3 py-4 d-flex align-items-center justify-content-start gap-3">
+            <img src="/photo/Immagine 2023-11-08 151517.png" height="60" width="80"/>
+            <a class="text-decoration-none fs-3 text-black" href="/">Best of...</a>
+            <div class="ms-auto d-flex align-items-center justify-content-end gap-3">
+                <a type="button" class="btn btn-outline-dark" href="/movies">Movies</a>
+                <a type="button" class="btn btn-outline-dark" href="/songs">Songs</a>
+            </div>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="me-3 text-center py-3" th:text="'Best of the year by ' + ${name}"></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex flex-column justify-content-center align-items-center gap-3">
 
+                <img class="img-fluid" th:src="@{/photo/_4cd3b9fd-31ab-4947-b0a6-be2b29104433.jpg}" alt="random img" height="800" width="800">
 
+                <p>
+                    Benvenuti nel mondo avvincente della cinematografia e della musica con il nostro sito, il vostro punto di riferimento per le classifiche dei "Best Movie" e delle "Best Song of the Year". Se sei un appassionato di cinema e musica, sei nel posto giusto.
+
+                    Il nostro sito è il luogo ideale per tutti coloro che desiderano rimanere costantemente aggiornati sulle opere cinematografiche e musicali più eccezionali di ogni anno. Che tu sia un cinefilo incallito o un amante della musica accanito, qui troverai informazioni dettagliate sulle migliori produzioni di ogni stagione, dalla suspense dei thriller ai ritmi accattivanti delle canzoni pop, passando per l'emozione dei drammi e la creatività degli artisti emergenti.
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
 </body>
+
 </html>

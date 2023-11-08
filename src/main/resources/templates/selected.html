@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="index :: html_head"></head>
+
+<body>
+<div th:replace="index :: site_header"></div>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="me-3 text-center py-3">Details</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <div class="card border-dark text-center">
+                    <div class="card-header border-dark bg-transparent">
+                        [[${data.getTitle()}]]
+                    </div>
+                    <div class="card-body bg-transparent border-dark">
+                        Id: <span>[[${data.getId()}]]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+
+</body>
+
+</html>

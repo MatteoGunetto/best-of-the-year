@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best of the Year</title>
-</head>
+<head th:replace="index :: html_head"></head>
 
 <body>
-<h1>Movies</h1>
-<ul th:each="movie: ${movies}">
-    <li>[[${movie.getId()}]] --> title: [[${movie.getTitle()}]]</li>
-</ul>
+<div th:replace="index :: site_header"></div>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="me-3 text-center py-3">Movies</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul class="list-unstyled d-flex justify-content-center gap-3" th:each="movie: ${movies}">
+                    <li class="py-3 px-5 border-bottom border-dark">
+                        <a class="text-decoration-none text-dark" th:href="@{movies/{id}(id=${movie.getId()})}">
+                            [[${movie.getTitle()}]]
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
 </body>
 
 </html>
